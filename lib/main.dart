@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/route_nav_unnamed_route.dart';
 import 'package:flutter_getx/snackbar.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: Bottomsheet(),
+      home: routing(),
     );
   }
 }
