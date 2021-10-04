@@ -20,12 +20,12 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: Text("Go back to home"),
               ),
-              Text("${Get.arguments}"),
+              Text("${Get.parameters['someValue']}"),
               ElevatedButton(
                 onPressed: () {
                   Get.back(result: "Hello");
                 },
-                child: Text("Send Data back"),
+                child: Text("${Get.parameters['name']}"),
               ),
             ],
           ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx/Home/home.dart';
+import 'package:flutter_getx/route_named.dart';
 import 'package:flutter_getx/route_nav_unnamed_route.dart';
 import 'package:flutter_getx/snackbar.dart';
 import 'package:get/get.dart';
@@ -22,7 +24,14 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: routing(),
+      initialRoute: '/',
+      defaultTransition: Transition.zoom,
+      home: RouteNamed(),
+      getPages: [
+        GetPage(name: '/', page: ()=>MyApp()),
+        GetPage(name: '/home', page: ()=>HomeScreen()),
+        GetPage(name: '/home/:someValue', page: ()=>HomeScreen())
+      ],
     );
   }
 }
