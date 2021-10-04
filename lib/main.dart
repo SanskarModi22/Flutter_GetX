@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx/snackbar.dart';
 import 'package:get/get.dart';
 
+import 'bottom_sheet_dynamic_theme.dart';
 import 'dialog.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: Dialoge(),
+      home: Bottomsheet(),
     );
   }
 }
