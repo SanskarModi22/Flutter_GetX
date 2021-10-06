@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class StateManagement extends StatelessWidget {
   StateManagement({Key? key}) : super(key: key);
 
-  // MyController mc = Get.put(MyController());
+  MyController mc = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,19 +15,20 @@ class StateManagement extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           GetBuilder<MyController>(
-            init: MyController(),
+            // initState: (data) => mc.increment(),
+            // dispose: (_) => mc.cleanUpTask(),
             builder: (controller) {
               return Text("The value is ${controller.count}");
             },
           ),
           // Obx(() => Text("Name is ${mc.student.value.name}")),
-          ElevatedButton(
-            onPressed: () {
-              Get.find<MyController>()
-                  .increment(); //Used for creating the instance of MyController
-            },
-            child: Text("Increase count"),
-          )
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Get.find<MyController>()
+          //         .increment(); //Used for creating the instance of MyController
+          //   },
+          //   child: Text("Increase count"),
+          // )
         ],
       ),
     );
