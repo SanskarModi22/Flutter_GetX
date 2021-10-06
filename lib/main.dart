@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/Home/home.dart';
+import 'package:flutter_getx/reactive_state_manager.dart';
 import 'package:flutter_getx/route_named.dart';
 import 'package:flutter_getx/route_nav_unnamed_route.dart';
 import 'package:flutter_getx/snackbar.dart';
@@ -21,18 +22,16 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/',
       defaultTransition: Transition.zoom,
-      home: RouteNamed(),
+      home: RxState(),
       getPages: [
-        GetPage(name: '/', page: ()=>MyApp()),
-        GetPage(name: '/home', page: ()=>HomeScreen()),
-        GetPage(name: '/home/:someValue', page: ()=>HomeScreen())
+        GetPage(name: '/', page: () => MyApp()),
+        GetPage(name: '/home', page: () => HomeScreen()),
+        GetPage(name: '/home/:someValue', page: () => HomeScreen())
       ],
     );
   }
 }
-
