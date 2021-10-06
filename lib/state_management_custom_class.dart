@@ -14,7 +14,7 @@ class StateManagement extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          GetX<MyController>(
+          GetBuilder<MyController>(
             init: MyController(),
             builder: (controller) {
               return Text("The value is ${controller.count}");
@@ -23,7 +23,8 @@ class StateManagement extends StatelessWidget {
           // Obx(() => Text("Name is ${mc.student.value.name}")),
           ElevatedButton(
             onPressed: () {
-              Get.find<MyController>().increment();
+              Get.find<MyController>()
+                  .increment(); //Used for creating the instance of MyController
             },
             child: Text("Increase count"),
           )
@@ -34,3 +35,7 @@ class StateManagement extends StatelessWidget {
 }
 //One way of reactive state management is to use Get.put like in previous commit or
 //like this method
+
+//Here we are using simple state management using GetBuilder instead of reactive state management.
+//In MyController class we have to use update() for simple state management.
+//Rest another way instead of init is using Get.put
