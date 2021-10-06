@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/Home/student.dart';
+import 'package:flutter_getx/my_controller.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class StateManagement extends StatelessWidget {
   StateManagement({Key? key}) : super(key: key);
 
-  var student =
-      Student(name: "Sanskar", age: 19).obs; //Created an object of the class
+  MyController mc = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Obx(() => Text("Name is ${student.value.name}")),
+          Obx(() => Text("Name is ${mc.student.value.name}")),
           ElevatedButton(
             onPressed: () {
-              student.update((student) {
-                student!.name = student.name.toString().toUpperCase();
-              });
+              mc.createUpperCase();
             },
             child: Text("Change to upper Case"),
           )
