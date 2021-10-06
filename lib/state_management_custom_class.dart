@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class StateManagement extends StatelessWidget {
   StateManagement({Key? key}) : super(key: key);
 
-  MyController mc = Get.put(MyController());
+  // MyController mc = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,15 +14,23 @@ class StateManagement extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Obx(() => Text("Name is ${mc.student.value.name}")),
+          GetX<MyController>(
+            init: MyController(),
+            builder: (controller) {
+              return Text("The value is ${controller.count}");
+            },
+          ),
+          // Obx(() => Text("Name is ${mc.student.value.name}")),
           ElevatedButton(
             onPressed: () {
-              mc.createUpperCase();
+              Get.find<MyController>().increment();
             },
-            child: Text("Change to upper Case"),
+            child: Text("Increase count"),
           )
         ],
       ),
     );
   }
 }
+//One way of reactive state management is to use Get.put like in previous commit or
+//like this method

@@ -9,4 +9,9 @@ class MyController extends GetxController {
       student!.name = student.name.toString().toUpperCase();
     });
   }
+
+  var count = 0.obs;
+  void increment() {
+    count++;
+  }
 }
