@@ -14,28 +14,28 @@ class MyController extends GetxController {
   // void increment() {
   //   count++;
   var count = 0;
-  // void increment() {
-  //   count++;
+  void increment() {
+    count++;
+    update(['txtCount']);
+  }
+  // void increment() async {
+  //   await Future<int>.delayed(Duration(seconds: 2));
+  //   this.count++;
   //   update();
   // }
-  void increment() async {
-    await Future<int>.delayed(Duration(seconds: 2));
-    this.count++;
-    update();
-  }
 
-  void cleanUpTask() {
-    print("cleaned");
-  }
+  // void cleanUpTask() {
+  //   print("cleaned");
+  // }
 
-  @override
-  void onInit() {
-    print("init");
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   print("init");
+  //   super.onInit();
+  // }
 
-  void onClose() {
-    print("init");
-    super.onClose();
-  }
+  // void onClose() {
+  //   print("init");
+  //   super.onClose();
+
 }

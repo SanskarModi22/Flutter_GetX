@@ -5,6 +5,7 @@ import 'package:flutter_getx/route_named.dart';
 import 'package:flutter_getx/route_nav_unnamed_route.dart';
 import 'package:flutter_getx/snackbar.dart';
 import 'package:flutter_getx/state_management_custom_class.dart';
+import 'package:flutter_getx/unique_id.dart';
 import 'package:get/get.dart';
 
 import 'bottom_sheet_dynamic_theme.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       defaultTransition: Transition.zoom,
-      home: StateManagement(),
+      home: UniqueiD(),
       getPages: [
         GetPage(name: '/', page: () => MyApp()),
         GetPage(name: '/home', page: () => HomeScreen()),
