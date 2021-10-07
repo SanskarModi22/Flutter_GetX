@@ -14,28 +14,37 @@ class UniqueiD extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          GetBuilder<MyController>(
-            // initState: (data) => mc.increment(),
-            // dispose: (_) => mc.cleanUpTask(),
-            id: 'txtCount',
-            builder: (controller) {
-              return Text("The value is ${controller.count}");
-            },
-          ),
-          GetBuilder<MyController>(
-            // initState: (data) => mc.increment(),
-            // dispose: (_) => mc.cleanUpTask(),
+          // GetBuilder<MyController>(
+          //   // initState: (data) => mc.increment(),
+          //   // dispose: (_) => mc.cleanUpTask(),
+          //   id: 'txtCount',
+          //   builder: (controller) {
+          //     return Text("The value is ${controller.count}");
+          //   },
+          // ),
+          // GetBuilder<MyController>(
+          //   // initState: (data) => mc.increment(),
+          //   // dispose: (_) => mc.cleanUpTask(),
 
-            builder: (controller) {
-              return Text("The value is ${controller.count}");
-            },
-          ),
+          //   builder: (controller) {
+          //     return Text("The value is ${controller.count}");
+          //   },
+          // ),
           // Obx(() => Text("Name is ${mc.student.value.name}")),
           ElevatedButton(
             onPressed: () {
               mc.increment(); //Used for creating the instance of MyController
             },
             child: Text("Increase count"),
+          ),
+          Padding(
+            padding: EdgeInsets.all(5),
+            // onPressed: () {
+            //   mc.increment(); //Used for creating the instance of MyController
+            // },
+            child: TextField(onChanged: (val) {
+              mc.increment();
+            }),
           )
         ],
       ),
