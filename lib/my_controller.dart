@@ -12,7 +12,7 @@ class MyController extends GetxController {
       student!.name = student.name.toString().toUpperCase();
     });
   }
-  void incrementCounter() async {
+  Future<void> incrementCounter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     int counter = (prefs.getInt('counter') ?? 0) + 1;
     print('Pressed $counter times.');
