@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/Home/home.dart';
+import 'package:flutter_getx/dependency_injection.dart';
 import 'package:flutter_getx/internationalization.dart';
 import 'package:flutter_getx/reactive_state_manager.dart';
 import 'package:flutter_getx/route_named.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       defaultTransition: Transition.zoom,
-      home: Internationalization(),
+      home: DependencyInjection(),
       getPages: [
         GetPage(name: '/', page: () => MyApp()),
         GetPage(name: '/home', page: () => HomeScreen()),
